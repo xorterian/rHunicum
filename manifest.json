@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "rHunicum",
+  "version": "1.0",
+
+  "description": "Transscripts Hungarian texts into Old Hungarian style.",
+
+  "permissions": ["activeTab"],
+  
+  "browser_action": {
+    "default_icon": "icons/icon-32.png",
+    "default_title": "rHunicum"
+  },
+
+  "icons": {
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "64": "icons/icon-64.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.hu/*",
+        "*://hu.wikipedia.org/*"
+      ],
+      "js": ["rhunify.js"],
+      "css": ["rhunify.css"]
+    }
+  ],
+  
+  "web_accessible_resources": [ "fonts/runic.ttf" ]
+}
